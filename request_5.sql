@@ -1,0 +1,4 @@
+USE practika;
+SELECT SUTENAME, DOLGNOST
+FROM TEACHER
+WHERE DOLGNOST = 'Ассистент' OR DOLGNOST = 'Доцент';

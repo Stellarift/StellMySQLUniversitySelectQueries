@@ -1,0 +1,4 @@
+USE practika;
+SELECT SUTENAME, Data_hire
+FROM TEACHER
+WHERE Data_hire > '2005-01-01';

@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS practika;
+USE practika;
+
+CREATE TABLE facultet (
+    kod_faculteta INT PRIMARY KEY AUTO_INCREMENT,
+    name_faculteta VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE KAFEDRA (
+    KOD_kafedru INT PRIMARY KEY AUTO_INCREMENT,
+    Name_kafedru VARCHAR(100) NOT NULL,
+    fio_zavkaf VARCHAR(100),
+    NUM_KORPUSA INT
+);
+
+CREATE TABLE TEACHER (
+    KOD_TEACHER INT PRIMARY KEY AUTO_INCREMENT,
+    SUTENAME VARCHAR(50),
+    DOLGNOST VARCHAR(50),
+    SALARY DECIMAL(10,2),
+    RISE DECIMAL(10,2),
+    Data_hire DATE,
+    INDEF_KOD VARCHAR(20),
+    TEL_TEACHER VARCHAR(20),
+    KOD_kafedru INT,
+    FOREIGN KEY (KOD_kafedru) REFERENCES KAFEDRA(KOD_kafedru)
+);
+
+CREATE TABLE Student (
+    STUDENT_ID INT PRIMARY KEY AUTO_INCREMENT,
+    SUTENAME VARCHAR(50),
+    first_name VARCHAR(50),
+    birth_date DATE,
+    stipend DECIMAL(10,2),
+    course INT,
+    city VARCHAR(50),
+    kafedra_id INT,
+    FOREIGN KEY (kafedra_id) REFERENCES KAFEDRA(KOD_kafedru)
+);

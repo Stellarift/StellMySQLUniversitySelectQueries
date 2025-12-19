@@ -1,0 +1,4 @@
+USE practika;
+SELECT Name_kafedru, NUM_KORPUSA
+FROM KAFEDRA
+WHERE NUM_KORPUSA IN (1, 3, 5);
